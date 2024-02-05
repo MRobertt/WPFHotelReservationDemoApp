@@ -1,0 +1,157 @@
+﻿<Window x:Class="WPFHotelReservationDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFHotelReservationDemo"
+        mc:Ignorable="d"
+        Title="Reservation Form" Height="450" Width="800">
+    <Grid Margin="0,10,10,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Content="First Name:" 
+            Margin="0 10"/>
+        <TextBox 
+            Grid.Row="1" 
+            Grid.Column="2" 
+            x:Name="firstNameInput" 
+            Width="200" 
+            Margin="0 10"/>
+        <Label 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Content="Last Name:" 
+            Margin="0 10"/>
+        <TextBox 
+            Grid.Row="2" 
+            Grid.Column="2" 
+            x:Name="lastNameInput" 
+            Width="200" 
+            Margin="0 10"/>
+        <Label 
+            Grid.Row="3" 
+            Grid.Column="1" 
+            Content="Phone Number:" 
+            Margin="0 10"/>
+        <TextBox 
+            Grid.Row="3" 
+            Grid.Column="2" 
+            x:Name="phoneNumberInput"
+            Width="200" 
+            Margin="0 10"/>
+        <Label 
+            Grid.Row="4" 
+            Grid.Column="1" 
+            Content="Room Number:" 
+            Margin="0 10"/>
+        <TextBox 
+            Grid.Row="4" 
+            Grid.Column="2" 
+            x:Name="roomNumberInput"
+            Width="200" 
+            Margin="0 10"/>
+        <Label 
+            Grid.Row="4" 
+            Grid.Column="3" 
+            Content="Room Price:" 
+            Margin="0 10"/>
+        <TextBox 
+            Grid.Row="4" 
+            Grid.Column="4" 
+            x:Name="roomPriceInput"
+            Width="200" 
+            Margin="0 10"/>
+        <Label 
+            Grid.Row="5" 
+            Grid.Column="1" 
+            Content="From:" 
+            Margin="0 10"/>
+        <DatePicker 
+            x:Name="startDateInput" 
+            Grid.Row="5" 
+            Grid.Column="2" 
+            Margin="0 10 5 10" 
+            Width="150" />
+        <Label 
+            Grid.Row="5" 
+            Grid.Column="3" 
+            Content="To:" 
+            Margin="10 10"/>
+        <DatePicker 
+            x:Name="finishDateInput" 
+            Grid.Row="5" 
+            Grid.Column="4" 
+            Margin="5 10" 
+            Width="150" />
+        <Button 
+            Grid.Column="5" 
+            Grid.Row="5" 
+            x:Name="CheckRoomBtn" 
+            Content="Book Now" 
+            Margin="0 30 0 0" 
+            Click="CheckRoomBtn_Click"/>
+        <Label 
+            Grid.Row="5" 
+            Grid.Column="5" 
+            Content="" 
+            Margin="0 10"
+            x:Name="roomStatusLabel"/>
+        <Button 
+            Grid.Column="1" 
+            Grid.Row="6" 
+            x:Name="BookRoomBtn" 
+            Content="Book Now" 
+            Margin="0 30 0 0" 
+            Click="BookRoomBtn_Click"/>
+        <ScrollViewer 
+            HorizontalScrollBarVisibility="Auto" 
+            VerticalScrollBarVisibility="Auto"
+            Grid.Row="1" 
+            Grid.Column="4">
+            <ListBox 
+            Name="listBoxMessagesOutput"
+            Height="50"
+            Width="200"/>
+        </ScrollViewer>
+        <DockPanel HorizontalAlignment="Left" Grid.Row="8" Grid.Column="1">
+            <TextBlock Text="To make a reservation please fill the fields and click on Book Now button." TextWrapping="Wrap" MaxWidth="100"/>
+        </DockPanel>
+        <Button 
+            Grid.Column="4" 
+            Grid.Row="6" 
+            x:Name="CancelRoomBtn" 
+            Content="Cancel Reservation"
+            Margin="0 30 0 0" 
+            Click="CancelRoomBtn_Click"/>
+        <DockPanel HorizontalAlignment="Left" Grid.Row="8" Grid.Column="4">
+            <TextBlock Text="To cancel a reservation please fill the fields and click on Cancel Reservation button." TextWrapping="Wrap" MaxWidth="100"/>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Grid.Row="5" Grid.Column="5">
+            <TextBlock x:Name="availibilityMessage" TextWrapping="Wrap" MaxWidth="200" Foreground="Red"/>
+        </DockPanel>
+    </Grid>
+</Window>
